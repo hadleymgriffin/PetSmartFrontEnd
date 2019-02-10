@@ -10,3 +10,4 @@ npm uninstall ajv
 npm install ajv@6.8.1
 npm start
 ```
+Note: something is broken with the newest ajv hence uninstall and install of an older versiob. See more here: https://github.com/webpack/webpack/issues/8768
