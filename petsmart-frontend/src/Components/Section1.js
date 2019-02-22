@@ -1,7 +1,11 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
+import React from "react";
+import Form from "react-bootstrap/Form";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import Dropdown from "react-bootstrap/Dropdown";
+import Button from "react-bootstrap/Button";
+import Section2 from './Section2'
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 const Section1 = () => (
   <div>
     <h2>Information</h2>
@@ -46,7 +50,13 @@ const Section1 = () => (
     <Form.Group controlId="formReasona">
       <Form.Control type="text" placeholder="Reason Details" />
     </Form.Group>
+
+    
+      <Link to="/section2">
+        <Button>Next</Button>
+      </Link>
   </div>
 );
 
-export default Section1
+
+export default Section1;
