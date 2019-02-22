@@ -6,8 +6,13 @@ import Button from "react-bootstrap/Button";
 import Section2 from './Section2'
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+const divStyle = {
+  margin: '40px'
+};
+
 const Section1 = () => (
-  <div>
+  <div style={divStyle}>
     <h2>Information</h2>
     <Form.Group controlId="formEmployeeName">
       <Form.Label>Employee Name</Form.Label>
