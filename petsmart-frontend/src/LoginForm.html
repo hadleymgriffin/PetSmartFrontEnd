@@ -1,0 +1,31 @@
+<script type = "text/javascript" src="LoginForm.js"></script>
+<script
+  src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.14.0/js/okta-sign-in.min.js"
+  type="text/javascript"></script>
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.14.0/css/okta-sign-in.min.css"
+  type="text/css"
+  rel="stylesheet"/>
+
+<!-- Theme file: Customize or replace this file if you want to override our default styles -->
+<link
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.14.0/css/okta-theme.css"
+  type="text/css"
+  rel="stylesheet"/>
+
+<div id="widget-container"></div>
+
+<script>
+  var signIn = new OktaSignIn({baseUrl: 'https://dev-748079.oktapreview.com'});
+  signIn.renderEl({
+    el: '#widget-container'
+  }, function success(res) {
+    if (res.status === 'SUCCESS') {
+      console.log('Do something with this sessionToken', res.session.token);
+    } else {
+    // The user can be in another authentication state that requires further action.
+    // For more information about these states, see:
+    //   https://github.com/okta/okta-signin-widget#rendereloptions-success-error
+    }
+  });
+</script>
