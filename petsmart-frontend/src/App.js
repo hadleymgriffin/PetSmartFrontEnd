@@ -8,7 +8,7 @@ import Login from './Login';
 import Protected from './Protected';
 import Section1 from './Components/Section1'
 import Section2 from './Components/Section2'
-
+import Section3 from './Components/Section3'
 
 
 function onAuthRequired({history}) {
@@ -31,6 +31,7 @@ class App extends Component {
             
           <Route path='/implicit/callback' component={Section1} />
           <Route path="/section2" component={Section2}/>
+          <Route path="/section3" component={Section3}/>
         </Security>
       </Router>
     );
