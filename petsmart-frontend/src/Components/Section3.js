@@ -55,10 +55,11 @@ const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
   </div>
 );
 
+
 let id = 0;
-function createData(Date, Origin, Destination, Select, MilesKm, Rate, Price, Reason) {
+function createData(Date, Origin, Destination, Select, MilesKm, Rate, Price, Reason, Explain) {
     id += 1;
-    return { id, Date, Origin, Destination, Select, MilesKm, Rate, Price, Reason };
+    return { id, Date, Origin, Destination, Select, MilesKm, Rate, Price, Reason, Explain };
 }
 
 const rows = [
@@ -105,7 +106,10 @@ const rows = [
             <option value="Telephone (Home office, Cell, Fax, Internet)">Telephone (Home office, Cell, Fax, Internet)</option>
             <option value="Vet Visits">Vet Visits</option>
             <option value="Visa/Passport Fees">Visa/Passport Fees</option>
-        </select>)),
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>),
+        <Form.Control type="text" placeholder="If Miscellaneous, Explain:" />), 
+
     createData(
         <Form.Control type="text" placeholder="DD/MM/YYYY" />,
         <Form.Control type="text" placeholder="City, State/Province, Country" />,
@@ -149,7 +153,10 @@ const rows = [
             <option value="Telephone (Home office, Cell, Fax, Internet)">Telephone (Home office, Cell, Fax, Internet)</option>
             <option value="Vet Visits">Vet Visits</option>
             <option value="Visa/Passport Fees">Visa/Passport Fees</option>
-        </select>)),
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>),
+         <Form.Control type="text" placeholder="If Miscellaneous, Explain:" />),
+        
     createData(
         <Form.Control type="text" placeholder="DD/MM/YYYY" />,
         <Form.Control type="text" placeholder="City, State/Province, Country" />,
@@ -193,7 +200,9 @@ const rows = [
             <option value="Telephone (Home office, Cell, Fax, Internet)">Telephone (Home office, Cell, Fax, Internet)</option>
             <option value="Vet Visits">Vet Visits</option>
             <option value="Visa/Passport Fees">Visa/Passport Fees</option>
-        </select>)),
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>),
+        <Form.Control type="text" placeholder="If Miscellaneous, Explain:" />),
     createData(
         <Form.Control type="text" placeholder="DD/MM/YYYY" />,
         <Form.Control type="text" placeholder="City, State/Province, Country" />,
@@ -237,7 +246,10 @@ const rows = [
             <option value="Telephone (Home office, Cell, Fax, Internet)">Telephone (Home office, Cell, Fax, Internet)</option>
             <option value="Vet Visits">Vet Visits</option>
             <option value="Visa/Passport Fees">Visa/Passport Fees</option>
-        </select>)),
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>),
+        <Form.Control type="text" placeholder="If Miscellaneous, Explain:" />,),
+        
     createData(
         <Form.Control type="text" placeholder="DD/MM/YYYY" />,
         <Form.Control type="text" placeholder="City, State/Province, Country" />,
@@ -281,7 +293,9 @@ const rows = [
             <option value="Telephone (Home office, Cell, Fax, Internet)">Telephone (Home office, Cell, Fax, Internet)</option>
             <option value="Vet Visits">Vet Visits</option>
             <option value="Visa/Passport Fees">Visa/Passport Fees</option>
-        </select>)),
+            <option value="Miscellaneous">Miscellaneous</option>
+        </select>), 
+        <Form.Control type="text" placeholder="If Miscellaneous, Explain:" />,),
 ];
 
 function SimpleTable(props) {
@@ -301,6 +315,7 @@ function SimpleTable(props) {
                         <TableCell align="left">Rate</TableCell>
                         <TableCell align="left">Price</TableCell>
                         <TableCell align="left">Reason</TableCell>
+                        <TableCell align="left">Explain</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -317,6 +332,7 @@ function SimpleTable(props) {
                             <TableCell align="left">{row.Rate}</TableCell>
                             <TableCell align="left">{row.Price}</TableCell>
                             <TableCell align="left">{row.Reason}</TableCell>
+                            <TableCell align="left">{row.Explain}</TableCell>
                         </TableRow>
 
                     ))}
@@ -359,6 +375,7 @@ function CenteredGrid(props) {
                                     <TableCell align="left">Rate</TableCell>
                                     <TableCell align="left">Price</TableCell>
                                     <TableCell align="left">Reason</TableCell>
+                                    <TableCell align="left">Explain</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -375,6 +392,7 @@ function CenteredGrid(props) {
                                         <TableCell align="left">{row.Rate}</TableCell>
                                         <TableCell align="left">{row.Price}</TableCell>
                                         <TableCell align="left">{row.Reason}</TableCell>
+                                        <TableCell align="left">{row.Explain}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -390,7 +408,7 @@ function CenteredGrid(props) {
                     </Link>
                 </Grid>
                 <Grid item xs={5}>
-                            <Form>
+                <Form>
                     {['checkbox'].map(type => (
                         <div key={`custom-${type}`} className="mb-3">
                         <Form.Check 
@@ -401,11 +419,11 @@ function CenteredGrid(props) {
                         />
                     </div>
                     ))}
-                </Form>; 
+                </Form>;
                 </Grid>
                 <Grid item xs={3}>
                     <Link to="/end">
-                    <Button variant="contained" color="secondary" className={classes.button}>
+                    <Button variant="contained" color="primary" className={classes.button}>
                         Submit
                     </Button>
                     </Link>
@@ -414,6 +432,7 @@ function CenteredGrid(props) {
         </div>
     );
 }
+
 
 CenteredGrid.propTypes = {
     classes: PropTypes.object.isRequired,
