@@ -390,8 +390,18 @@ function CenteredGrid(props) {
                     </Link>
                 </Grid>
                 <Grid item xs={5}>
-                    <Form.Control type="text" placeholder="Digital Signature" />
-                        
+                            <Form>
+                    {['checkbox'].map(type => (
+                        <div key={`custom-${type}`} className="mb-3">
+                        <Form.Check 
+                          custom
+                          type={type}
+                          id={`custom-${type}`}
+                          label={`Confirm Digital Signature`}
+                        />
+                    </div>
+                    ))}
+                </Form>; 
                 </Grid>
                 <Grid item xs={3}>
                     <Link to="/end">
