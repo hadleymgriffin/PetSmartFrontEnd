@@ -40,6 +40,21 @@ const styles = theme => ({
     },
 });
 
+const Checkbox = ({ label, isSelected, onCheckboxChange }) => (
+  <div className="form-check">
+    <label>
+      <input
+        type="checkbox"
+        name={label}
+        checked={isSelected}
+        onChange={onCheckboxChange}
+        className="form-check-input"
+      />
+      {label}
+    </label>
+  </div>
+);
+
 let id = 0;
 function createData(Date, Origin, Destination, Select, MilesKm, Rate, Price, Reason) {
     id += 1;
@@ -376,6 +391,7 @@ function CenteredGrid(props) {
                 </Grid>
                 <Grid item xs={5}>
                     <Form.Control type="text" placeholder="Digital Signature" />
+                        
                 </Grid>
                 <Grid item xs={3}>
                     <Link to="/end">
