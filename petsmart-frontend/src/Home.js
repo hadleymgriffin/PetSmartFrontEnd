@@ -2,7 +2,8 @@
 
 import React, { Component } from 'react';
 import { withAuth } from '@okta/okta-react';
-
+import './LoginForm.css';
+import puppy from './puppy.png' 
 export default withAuth(class Home extends Component {
   constructor(props) {
     super(props);
@@ -35,9 +36,17 @@ export default withAuth(class Home extends Component {
   }
 
   render() {
-    if (this.state.authenticated === null) return null;
-    return this.state.authenticated ?
-      <button onClick={this.logout}>Logout</button> :
-      <button onClick={this.login}>Login</button>;
+
+    return(
+    <div class="container">
+        <label id= "title">
+        <b>Expense Reimbursement Portal</b>
+        </label>
+        <img id= "puppy" src={puppy}></img>
+        <button onClick={this.login}>Login</button>
+    </div>
+    
+    )
   }
+
 });
