@@ -6,7 +6,8 @@ import { withAuth } from '@okta/okta-react';
 import OktaSignIn from '@okta/okta-signin-widget';
 import '@okta/okta-signin-widget/dist/css/okta-sign-in.min.css';
 import '@okta/okta-signin-widget/dist/css/okta-theme.css';
-
+import './LoginForm.css';
+import logo from './logo.png'
 export default withAuth(class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -53,21 +54,31 @@ export default withAuth(class LoginForm extends Component {
 
       
     return (
-      <form onSubmit={this.handleSubmit}>
+        <div class="container">
+        <img src={logo}></img>
+        <form onSubmit={this.handleSubmit}>
         <label>
-          Username:
+          <b>Username:</b>
           <input
             id="username" type="text"
             value={this.state.username}
-            onChange={this.handleUsernameChange} />
-          Password:
+            onChange={this.handleUsernameChange}
+            placeholder = "Enter Username"
+            required />
+        <b>Password:</b>
           <input
             id="password" type="password"
             value={this.state.password}
-            onChange={this.handlePasswordChange} />
-        </label>
+            onChange={this.handlePasswordChange}
+            placeholder="Enter Password"
+            required/>
         <input id="submit" type="submit" value="Submit" />
+        </label>
+        
+
       </form>
+        </div>
+
     );
   }
 });
