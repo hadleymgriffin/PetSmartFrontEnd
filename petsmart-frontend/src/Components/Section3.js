@@ -4,6 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 //import Button from "react-bootstrap/Button";
 import Section2 from './Section2'
 import Section1 from './Section1'
+import confirmation from './confirmation'
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -350,6 +351,7 @@ function CenteredGrid(props) {
     const { classes } = props;
 
     return (
+        
         <div className={classes.root}>
             <Grid container spacing={24}>
                 <Grid item xs={12}>
@@ -422,7 +424,7 @@ function CenteredGrid(props) {
                 </Form>;
                 </Grid>
                 <Grid item xs={3}>
-                    <Link to="/end">
+                    <Link to="/confirmation">
                     <Button variant="contained" color="primary" className={classes.button}>
                         Submit
                     </Button>

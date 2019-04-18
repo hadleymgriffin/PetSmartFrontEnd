@@ -11,7 +11,8 @@ import Form from "react-bootstrap/Form";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
-
+import Section3 from './Section3'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const styles = theme => ({
   root: {
@@ -329,6 +330,7 @@ const rows = [
     <Form.Group controlId="SunMiscPrice">
       <Form.Control size="sm" type="text" placeholder="$0.00" />
     </Form.Group>,
+             
   ),
 ];
 
@@ -336,6 +338,7 @@ function SimpleTable(props) {
   const { classes } = props;
 
   return (
+
     <Paper className={classes.root}>
       <Table className={classes.table}>
         <TableHead>
@@ -365,9 +368,16 @@ function SimpleTable(props) {
               <TableCell align="right">{row.Sunday}</TableCell>
             </TableRow>
           ))}
+
         </TableBody>
+        
       </Table>
+
     </Paper>
+    
+
+        
+
   );
 }
 
