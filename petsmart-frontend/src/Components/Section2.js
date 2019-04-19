@@ -33,10 +33,12 @@ const headerStyle = {
 
 const addButtonStyle = {
   marginLeft: '40px',
-  width: '14%',
-  backgroundColor: 'white',
-  color: 'black',
-  borderColor: 'black'
+  width: 50,
+  height: 50,
+  backgroundColor: 'black',
+  color: 'white',
+  borderColor: 'black',
+  fontWeight: 'bold'
 };
 
 const submitButtonStyle = {
@@ -265,15 +267,16 @@ class Section2 extends React.Component {
           </Table>
         </div>
         <div>
-          <Button id="addBtn" style={addButtonStyle} onClick={this.deleteRow}>Remove</Button>
-          <Button id="addBtn" style={addButtonStyle} onClick={this.addRow}>Add</Button>
+               <button id="addBtn" style={addButtonStyle} onClick={this.deleteRow}>-</button>
+
+          <button id="addBtn" style={addButtonStyle} onClick={this.addRow}>+</button>
         </div>
         <div>
           <Link to="/section1">
-            <Button id="Submit" style={submitButtonStyle} onClick={this.handleClick}>Back</Button>
+            <button id="Submit" style={submitButtonStyle} onClick={this.handleClick}>Back</button>
           </Link>
           <Link to="/section3">
-            <Button id="Submit" style={nextButtonStyle} onClick={this.handleClick}>Next</Button>
+            <button id="Submit" style={nextButtonStyle} onClick={this.handleClick}>Next</button>
           </Link>
         </div>
       </div>

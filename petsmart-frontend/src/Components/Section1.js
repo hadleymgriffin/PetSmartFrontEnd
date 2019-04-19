@@ -105,7 +105,7 @@ class Section1 extends React.Component {
 
 
         <Link to="/section2">
-          <Button style={addButtonStyle} onClick={this.handleClick}>Next</Button>
+          <button style={addButtonStyle} onClick={this.handleClick}>Next</button>
         </Link>
 
       </div>
