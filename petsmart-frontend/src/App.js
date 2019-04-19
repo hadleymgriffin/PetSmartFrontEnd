@@ -31,6 +31,7 @@ class App extends Component {
           <Route path='/login' render={() => <Login baseUrl='https://dev-748079.oktapreview.com' />} />
             
           <Route path='/implicit/callback' component={Section1} />
+          <Route path="/section1" component={Section1}/>
           <Route path="/section2" component={Section2}/>
           <Route path="/section3" component={Section3}/>
 

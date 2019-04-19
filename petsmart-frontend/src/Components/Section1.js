@@ -16,11 +16,25 @@ class Section1 extends React.Component {
     super(props);
 
     this.handleClick = this.handleClick.bind(this);
+    
+    this.state = {  employeeId: 112345678,
+                    country: "USA"      
+                  };
   }
 
   handleClick() {
-    ExpenseDataStore.data.section1 = this.state
+    ExpenseDataStore.data.name = this.state.name;
+    ExpenseDataStore.data.address1 = this.state.address1;
+    ExpenseDataStore.data.address2 = this.state.address2;
+    ExpenseDataStore.data.employeeId = this.state.employeeId;
+    ExpenseDataStore.data.city = this.state.city;
+    ExpenseDataStore.data.state = this.state.state;
+    ExpenseDataStore.data.zip = this.state.zipCode;
+    ExpenseDataStore.data.country = this.state.country;
+    ExpenseDataStore.data.reasonDetails = this.state.reasonDetails;
     console.log(ExpenseDataStore.data);
+    // ExpenseDataStore.data.section1 = this.state
+    // console.log(ExpenseDataStore.data);
   }
 
   render() {
@@ -34,7 +48,7 @@ class Section1 extends React.Component {
 
         <Form.Group controlId="formEmployeeId">
           <Form.Label>Employee Id</Form.Label>
-          <Form.Control type="text" placeholder="123456" readonly="readonly" onChange={(event) => { this.setState({employeeId : event.target.value}) }}/>
+          <Form.Control type="text" value={this.state.employeeId} readonly="readonly" onChange={(event) => { this.setState({employeeId : event.target.value}) }}/>
         </Form.Group>
         <h2>Address</h2>
         <Form.Group controlId="formAddress1">
@@ -49,7 +63,11 @@ class Section1 extends React.Component {
           <Form.Control type="text" placeholder="City" onChange={(event) => { this.setState({city : event.target.value}) }}/>
         </Form.Group>
 
-        <select id="country" onChange={(event) => { this.setState({country : event.target.value}) }}>
+        <Form.Group controlId="formState">
+          <Form.Control type="text" placeholder="State" onChange={(event) => { this.setState({state : event.target.value}) }}/>
+        </Form.Group>
+
+        <select id="country"  onChange={(event) => { this.setState({country : event.target.value}) }}>
           <option value="USA">USA</option>
           <option value="CA">Canada</option>
         </select>

@@ -4,7 +4,18 @@
 class ExpenseDataStore {
     constructor() {
         if (!ExpenseDataStore.instance) {
-            this.data = {section1: null};
+            this.data = {
+                name: null,
+                employeeId: null,
+                address1: null,
+                address2: null,
+                city: null,
+                state: null,
+                country: null,
+                zip: null,
+                reason: null,
+                reasonDetails: null,
+            };
             ExpenseDataStore.instance = this;
         }
         return ExpenseDataStore.instance;
@@ -14,5 +25,3 @@ class ExpenseDataStore {
 const instance = new ExpenseDataStore();
 
 export default instance;
-
-
