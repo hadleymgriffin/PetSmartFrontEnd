@@ -5,6 +5,8 @@ import { withAuth } from '@okta/okta-react';
 import '../LoginForm.css';
 import puppy from '../puppy.png' 
 import animals from '../animals.jpg'
+import ExpenseDataStore from '../Data/ExpenseDataStore'
+
 export default withAuth(class Home extends Component {
   constructor(props) {
     super(props);
@@ -22,6 +24,12 @@ export default withAuth(class Home extends Component {
     }
   }
 
+  componentDidMount() {
+    // Send out json POST
+    let json = JSON.stringify(ExpenseDataStore.data);
+    console.log(json);
+  }
+  
   componentDidUpdate() {
     this.checkAuthentication();
   }

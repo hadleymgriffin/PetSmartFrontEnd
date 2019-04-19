@@ -5,12 +5,26 @@ import Dropdown from "react-bootstrap/Dropdown";
 import Button from "react-bootstrap/Button";
 import Section2 from './Section2'
 import ExpenseDataStore from '../Data/ExpenseDataStore'
+import Paper from '@material-ui/core/Paper';
+
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const divStyle = {
   margin: '40px'
 };
+
+const headerStyle = {
+    width: '30%'
+}
+
+const addButtonStyle = {
+    marginright: '40px',
+
+    width: '10%'
+};
+
+
 class Section1 extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +53,10 @@ class Section1 extends React.Component {
 
   render() {
     return (
+      <div>
+      <Paper style={headerStyle}><h1>Section 1</h1></Paper>
       <div style={divStyle}>
+        
         <h2>Information</h2>
         <Form.Group controlId="formEmployeeName">
           <Form.Label>Employee Name</Form.Label>
@@ -88,9 +105,10 @@ class Section1 extends React.Component {
 
 
         <Link to="/section2">
-          <Button onClick={this.handleClick}>Next</Button>
+          <Button style={addButtonStyle} onClick={this.handleClick}>Next</Button>
         </Link>
 
+      </div>
       </div>
     );
   }
